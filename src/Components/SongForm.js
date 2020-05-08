@@ -1,7 +1,7 @@
 import React from 'react';
 
-const SongForm = () => {
- return <div>SogForm</div>;
+const SongForm = ({ handleSearch }) => {
+ return <div>Formulario</div>;
 };
 
 export default SongForm;
