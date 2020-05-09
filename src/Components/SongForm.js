@@ -1,56 +1,54 @@
 import React, { useState } from 'react';
 
 const initialForm = {
-  artist: '',
-  song: '',
+ artist: '',
+ song: '',
 };
 
 const SongForm = ({ handleSearch }) => {
-  const {form, setForm} = useState{initialForm};
+ const { form, setForm } = useState(initialForm);
 
-  const handleChance=(e)=> {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
+ const handleChance = (e) => {
+  setForm({
+   ...form,
+   [e.target.name]: e.target.value,
+  });
+ };
 
-const handleSubmit = (e) => {
+ const handleSubmit = (e) => {
   e.preventDefault();
 
-  if(!form.artist || !form.song){
-    alert('Datos Incompletos');
-    return;
+  if (!form.artist || !form.song) {
+   alert('Datos Incompletos');
+   return;
   }
 
   handleSearch(form);
   setForm(initialForm);
+ };
+
+ return (
+  <div>
+   <form onSubmit={handleSubmit}>
+    <input
+     type='text'
+     name='artist'
+     placeholder='Nombre del Interprete'
+     onChange={handleChance}
+     value={form.artist}
+    />
+    <input
+     type='text'
+     name='song'
+     placeholder='Nombre de la Canción'
+     onChange={handleChange}
+     value={form.song}
+    />
+    <input type='submit' value='Enviar' />
+    <input />
+   </form>
+  </div>
+ );
 };
 
-return (
-  <div>
-    <form onSubmit={handleSubmit}>
-      <input 
-      type='text' 
-      name='artist' 
-      placeholder='Nombre del Interprete' 
-      onChange={handleChance} 
-      value={form.artist}/>
-      <input 
-      type='text' 
-      name='song' 
-      placeholder='Nombre de la Canción' 
-      onChange={handleChange} 
-      value={form.song}
-      />
-      <input 
-      type='submit' 
-      value='Enviar'
-      />
-      <input/>
-    </form>
-  </div>
-  )
- };
- 
- export default SongForm;
+export default SongForm;

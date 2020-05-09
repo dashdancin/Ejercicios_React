@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { helpHttp } from '../helpers/helpHttp';
 import Loader from './Loader';
 import SongDetails from './SongDetails';
 import SongForm from './SongForm';
@@ -8,6 +9,26 @@ const SongSearch = () => {
  const [lyric, setLyric] = useState(null);
  const [bio, setBio] = useState(null);
  const [loading, setLoading] = useState(false);
+
+ useEffect(() => {
+   if (search === null) return;
+   
+   const fetchData = async () => {
+     const{ artist, song } = search;
+
+     let artistUrl = `https://www.theaudiodb.com/api/v1/json/2/search.php?s=${artist}`
+     let songUrl= `https://api.lyrics.ovh/v1/${artist}/${title}`
+
+     console.log(artistUrl, songUrl);
+
+     setLoading(true);
+
+     const[artistRes, songRes] = await Promise.all[
+       helpHttp().get(artistUrl),
+       helpHttp().get(songUrl),
+     ]);
+   }
+ }
 
  const handleSearch = (data) => {
   // console.log(data);
