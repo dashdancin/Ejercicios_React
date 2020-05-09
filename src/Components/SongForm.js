@@ -8,7 +8,7 @@ const initialForm = {
 const SongForm = ({ handleSearch }) => {
  const { form, setForm } = useState(initialForm);
 
- const handleChance = (e) => {
+ const handleChange = (e) => {
   setForm({
    ...form,
    [e.target.name]: e.target.value,
@@ -34,7 +34,7 @@ const SongForm = ({ handleSearch }) => {
      type='text'
      name='artist'
      placeholder='Nombre del Interprete'
-     onChange={handleChance}
+     onChange={handleChange}
      value={form.artist}
     />
     <input

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { helpHttp } from '../helpers/helpHttp';
 import Loader from './Loader';
 import SongDetails from './SongDetails';
@@ -28,6 +28,8 @@ const SongSearch = () => {
     helpHttp().get(songUrl),
    ]);
 
+   //  console.log(artistRes, songRes);
+
    setBio(artistRes);
    setLyric(songRes);
    setLoading(false);
@@ -46,7 +48,9 @@ const SongSearch = () => {
    <h2>Buscador de canciones</h2>
    {loading && <Loader />}
    <SongForm handleSearch={handleSearch} />
-   <SongDetails search={search} lyric={lyric} bio={bio} />
+   {search && !loading && (
+    <SongDetails search={search} lyric={lyric} bio={bio} />
+   )}
   </div>
  );
 };
