@@ -1,8 +1,12 @@
+import React from 'react';
+import { CrudApp } from "./Components/CrudApp";
+
 function App() {
   return (
-    <div className="App">
-      <h2>Hola React App</h2>
-    </div>
+    <>
+      <h1>Ejercicios con React</h1>
+      <CrudApp/>
+    </>
   );
 }
 
