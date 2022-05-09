@@ -9,4 +9,4 @@ const SongLyric = ({ title, lyrics }) => {
  );
 };
 
-export default SongLyrics;
+export default SongLyric;
