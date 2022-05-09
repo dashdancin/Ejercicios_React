@@ -1,5 +1,5 @@
 import React from 'react';
-import { CrudApp } from "./Components/CrudApp";
+import CrudApp from './Components/CrudApp';
 
 function App() {
   return (
