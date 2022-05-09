@@ -10,7 +10,7 @@ const CrudTableRow = ({el}) => {
             <button>Eliminar</button>
         </td>                    
     </tr>
-);
+    );
 };
 
 export default CrudTableRow;
