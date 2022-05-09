@@ -31,7 +31,8 @@ const initialDb = [
 ];
 
 const CrudApp = () => {
-  const [db, setDb] = useState(initialDb);
+  const [db, setDb] = useState([]);
+
   return (
     <div>
         <h2>CRUD App</h2>

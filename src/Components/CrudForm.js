@@ -20,27 +20,27 @@ const CrudForm = () => {
     <h3>Agregar</h3>
       <form onSubmit={handleSubmit}>
         <input 
-        type='text' 
-        name='name' 
-        placeholder='Nombre' 
-        onChange={handleChange}
-        value={form.name}
+          type='text' 
+          name='name' 
+          placeholder='Nombre' 
+          onChange={handleChange}
+          value={form.name}
         />
         <input 
-        type='text' 
-        name='constellation' 
-        placeholder='Constlacion' 
-        onChange={handleChange}
-        value={form.constellation}
+          type='text' 
+          name='constellation' 
+          placeholder='Constlacion' 
+          onChange={handleChange}
+          value={form.constellation}
         />    
         <input 
-        type='submit' 
-        value='Enviar'
+          type='submit' 
+          value='Enviar'
         />    
         <input 
-        type='reset' 
-        value='Limpiar' 
-        onClick={handleReset} 
+          type='reset' 
+          value='Limpiar' 
+          onClick={handleReset} 
         />    
       </form>  
     </div>
