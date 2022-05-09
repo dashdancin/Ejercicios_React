@@ -1,4 +1,5 @@
 import React from 'react';
+import Message from './Message';
 import SongArtist from './SongArtist';
 import SongLyric from './SongLyric';
 
@@ -19,6 +20,7 @@ const SongDetails = ({ search, lyric, bio }) => {
    ) : (
     <Message
      msg={`Error: no existe el intérprete '<em>${search.artist}</em>'`}
+     bgColor='#dc3545'
     />
    )}
   </>
