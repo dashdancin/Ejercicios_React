@@ -54,7 +54,7 @@ const CrudApp = () => {
    />
    <CrudTable
     data={db}
-    dataToEdit={dataToEdit}
+    setdataToEdit={dataToEdit}
     deleteData={deleteData}
    />
   </div>
