@@ -1,4 +1,4 @@
-const SongLyrics = ({ tittle, lyrics }) => {
+const SongLyric = ({ title, lyrics }) => {
  return (
   <section>
    <h3>{title}</h3>
