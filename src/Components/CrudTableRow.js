@@ -1,18 +1,18 @@
 import React from 'react';
 
-const CrudTableRow = () => {
+const CrudTableRow = ({el}) => {
   return (
     <div>
         <tr>
-            <td>Jon</td>
-            <td>Geminis</td>
+            <td>{el.name}</td>
+            <td>{el.constellation}</td>
             <td>
                 <button>Editar</button>
                 <button>Eliminar</button>
             </td>                    
-            </tr>
+        </tr>
     </div>
-  )
-}
+  );
+};
 
 export default CrudTableRow
