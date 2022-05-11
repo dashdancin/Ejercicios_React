@@ -2,36 +2,8 @@ import React, { useState } from 'react';
 import CrudForm from './CrudForm';
 import CrudTable from './CrudTable';
 
-const initialDb = [
- {
-  id: 1,
-  name: 'Seiya',
-  constellation: 'Pegaso',
- },
- {
-  id: 2,
-  name: 'Shiyu',
-  constellation: 'Dragon',
- },
- {
-  id: 3,
-  name: 'Hyoga',
-  constellation: 'Cisne',
- },
- {
-  id: 4,
-  name: 'Shun',
-  constellation: 'Andromeda',
- },
- {
-  id: 5,
-  name: 'Ikki',
-  constellation: 'Fenix',
- },
-];
-
 const CrudApi = () => {
- const [db, setDb] = useState(initialDb);
+ const [db, setDb] = useState([]);
  const [dataToEdit, setDataToEdit] = useState(null);
 
  const createData = (data) => {
