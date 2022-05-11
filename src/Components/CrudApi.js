@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { helpHttp } from '../helpers/helpHttp';
 import CrudForm from './CrudForm';
 import CrudTable from './CrudTable';
 
 const CrudApi = () => {
  const [db, setDb] = useState([]);
  const [dataToEdit, setDataToEdit] = useState(null);
+
+ let api = helpHttp();
+ let url = 'http://localhost.5000/santos';
+
+ useEffect(() => {
+  api.get(url).theb((res) => {
+   console.log(res);
+  });
+ }, []);
 
  const createData = (data) => {
   data.id = Date.now();
@@ -31,7 +41,7 @@ const CrudApi = () => {
 
  return (
   <div>
-   <h2>CRUD App</h2>
+   <h2>CRUD API</h2>
    <CrudForm
     createData={createData}
     updateData={updateData}
