@@ -8,5 +8,8 @@ export const helpHttp = () => {
   options.signal = controller.signal;
 
   options.method = options.method || 'GET';
+  options.headers = options.headers
+   ? { ...defaultHeader, ...options.headers }
+   : defaultHeader;
  };
 };
