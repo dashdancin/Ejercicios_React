@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const initialForm = {
+const initailForm = {
  name: '',
  constellation: '',
  id: null,
@@ -12,13 +12,13 @@ const CrudForm = ({
  dataToEdit,
  setDataToEdit,
 }) => {
- const [form, setForm] = useState(initialForm);
+ const [form, setForm] = useState(initailForm);
 
  useEffect(() => {
   if (dataToEdit) {
    setForm(dataToEdit);
   } else {
-   setForm(initialForm);
+   setForm(initailForm);
   }
  }, [dataToEdit]);
 
@@ -47,7 +47,7 @@ const CrudForm = ({
  };
 
  const handleReset = (e) => {
-  setForm(initialForm);
+  setForm(initailForm);
   setDataToEdit(null);
  };
 
