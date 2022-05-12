@@ -6,7 +6,7 @@ const initialForm = {
 };
 
 const SongForm = ({ handleSearch }) => {
- const { form, setForm } = useState(initialForm);
+ const [form, setForm] = useState(initialForm);
 
  const handleChange = (e) => {
   setForm({
