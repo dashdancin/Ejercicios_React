@@ -4,11 +4,7 @@ import Loader from './Loader';
 import SongDetails from './SongDetails';
 import SongForm from './SongForm';
 
-const SongSearch = () => {
- const [search, setSearch] = useState(null);
- const [lyric, setLyric] = useState(null);
- const [bio, setBio] = useState(null);
- const [loading, setLoading] = useState(false);
+
 
  useEffect(() => {
   if (search === null) return;
