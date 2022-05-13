@@ -3,17 +3,24 @@ import SongArtist from './SongArtist';
 import SongLyric from './SongLyric';
 
 const SongDetails = ({ search, lyric, bio }) => {
-  if (!lyric || !bio) return null;
+ if (!lyric || !bio) return null;
 
-  return (
-   <> 
-    {lyric.error || lyric.err || lyric.name === 'AbortError' ? (
-    <Message 
-    msg={ `Error: no existe la canción '<em>${search.song}</em>'`}
+ return (
+  <>
+   {lyric.error || lyric.err || lyric.name === 'AbortError' ? (
+    <Message
+     msg={`Error: no existe la canción '<em>${search.song}</em>'`}
     />
-  ) : (
-    <SongLyric title={search.song} lyrics={lyric.lyrics}/>
-  )
+   ) : (
+    <SongLyric title={search.song} lyrics={lyric.lyrics} />
+   )}
+   {bio.artist ? (
+    <SongArtist artist={bio.artist[0]} />
+   ) : (
+    <Message
+     msg={`Error: no existe el intérprete '<em>${search.artist}</em>'`}
+    />
+   )}
   </>
  );
 };
