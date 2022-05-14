@@ -16,7 +16,7 @@ const SongSearch = () => {
   const fetchData = async () => {
    const { artist, song } = search;
 
-   let artistUrl = `https://www.theaudiodb.com/api/v1/json/1/search.php?s=${artist}`;
+   let artistUrl = `https://www.theaudiodb.com/api/v1/json/2/search.php?s=${artist}`;
    let songUrl = `https://api.lyrics.ovh/v1/${artist}/${song}`;
 
    //  console.log(artistUrl, songUrl);

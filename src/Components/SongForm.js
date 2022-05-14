@@ -45,7 +45,6 @@ const SongForm = ({ handleSearch }) => {
      value={form.song}
     />
     <input type='submit' value='Enviar' />
-    <input />
    </form>
   </div>
  );
