@@ -17,20 +17,24 @@ const SelectAnidados = () => {
      setState(e.target.value);
     }}
    />
-   <SelectList
-    title='municipios'
-    url=''
-    handleChange={(e) => {
-     setState(e.target.value);
-    }}
-   />
-   <SelectList
-    title='colonia'
-    url=''
-    handleChange={(e) => {
-     setState(e.target.value);
-    }}
-   />
+   {state && (
+    <SelectList
+     title='municipios'
+     url=''
+     handleChange={(e) => {
+      setTown(e.target.value);
+     }}
+    />
+   )}
+   {town && (
+    <SelectList
+     title='colonia'
+     url=''
+     handleChange={(e) => {
+      setSuburn(e.target.value);
+     }}
+    />
+   )}
    <pre>
     <code>
      {state} - {town} - {suburn}
