@@ -1,4 +1,3 @@
-import React from 'react';
 import Message from './Message';
 import SongArtist from './SongArtist';
 import SongLyric from './SongLyric';
@@ -10,7 +9,7 @@ const SongDetails = ({ search, lyric, bio }) => {
   <>
    {lyric.error || lyric.err || lyric.name === 'AbortError' ? (
     <Message
-     msg={`Error: no existe la canción '${search.song}'`}
+     msg={`Error: no existe la canción '<em>${search.song}</em>'`}
      bgColor='#dc3545'
     />
    ) : (

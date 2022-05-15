@@ -33,7 +33,7 @@ const SongForm = ({ handleSearch }) => {
     <input
      type='text'
      name='artist'
-     placeholder='Nombre del Interprete'
+     placeholder='Nombre del Intérprete'
      onChange={handleChange}
      value={form.artist}
     />
