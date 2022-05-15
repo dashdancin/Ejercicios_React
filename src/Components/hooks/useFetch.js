@@ -11,6 +11,7 @@ export const useFetch = (url) => {
 
   const fetchData = async () => {
    setLoading(true);
+
    try {
     const res = await fetch(url, { signal });
 
@@ -20,6 +21,7 @@ export const useFetch = (url) => {
      err.statusText = res.statusText || 'Ocurrió un error';
      throw err;
     }
+
     const json = await res.json();
 
     if (!signal.aborted) {
@@ -31,13 +33,17 @@ export const useFetch = (url) => {
      setData(null);
      setError(error);
     }
+   } finally {
+    if (!signal.aborted) {
+     setLoading(false);
+    }
    }
   };
 
-  return () => {
-   second;
-  };
- }, [third]);
+  fetchData();
 
- return <div>useFetch</div>;
+  return () => abortController.abort();
+ }, [url]);
+
+ return { data, error, loading };
 };
