@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SelectList from './SelectList';
 
 const SelectAnidados = () => {
@@ -28,13 +28,14 @@ const SelectAnidados = () => {
    )}
    {town && (
     <SelectList
-     title='colonia'
+     title='colonias'
      url=''
      handleChange={(e) => {
       setSuburn(e.target.value);
      }}
     />
    )}
+
    <pre>
     <code>
      {state} - {town} - {suburn}
